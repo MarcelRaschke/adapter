@@ -54,7 +54,7 @@
     "karma-safari-launcher": "^1.0.0",
     "karma-stability-reporter": "^3.0.1",
     "mocha": "^5.2.0",
-    "sinon": "^2.2.0",
+    "sinon": "^14.0.0",
     "sinon-chai": "^2.14.0",
     "travis-multirunner": "^4.6.0"
   }
