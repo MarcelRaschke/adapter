@@ -44,7 +44,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^19.0.0",
     "grunt-shell": "^2.1.0",
-    "karma": "^4.4.1",
+    "karma": "^5.0.8",
     "karma-browserify": "^5.2.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^2.2.0",
