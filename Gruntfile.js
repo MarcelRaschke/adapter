@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     babel: {
       options: {
-        presets: ['babel-preset-env']
+        presets: ['@babel/preset-env']
       },
       dist: {
         files: [{
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
     },
     eslint: {
       options: {
-        configFile: '.eslintrc'
+        overrideConfigFile: '.eslintrc'
       },
       target: ['src/**/*.js', 'test/*.js', 'test/unit/*.js', 'test/e2e/*.js']
     },
@@ -50,18 +50,12 @@ module.exports = function(grunt) {
         expand: true
       }
     },
-    shell: {
-      downloadBrowser : {
-        command: 'BROWSER=${BROWSER-chrome} BVER=${BVER-stable} ./node_modules/travis-multirunner/setup.sh'
-      },
-    },
   });
 
   grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['eslint', 'build']);
   grunt.registerTask('lint', ['eslint']);

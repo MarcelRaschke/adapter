@@ -1,7 +1,6 @@
 [![Build Status](https://travis-ci.org/webrtc/samples.svg)](https://travis-ci.org/webrtc/samples)
 
 # Intro #
-# Intro #
 
 Functional unit tests located in `test/unit` are run in node using [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and [Sinon](http://sinonjs.org/).
 They are preferred way to test the behaviour of isolated pieces of code or when behaviour depends on the browser version.
@@ -33,10 +32,8 @@ In order to get a usable file, you need to build it.
 ```bash
 grunt build
 ```
-This will result in 4 files in the out/ folder:
+This will result in 2 files in the out/ folder:
 * adapter.js - includes all the shims and is visible in the browser under the global `adapter` object (window.adapter).
-* adapter_no_edge.js - same as above but does not include the Microsoft Edge (ORTC) shim.
-* adapter_no_edge_no_global.js same as above but is not exposed/visible in the browser (you cannot call/interact with the shims in the browser).
 * adapter.js_no_global.js - same as adapter.js but is not exposed/visible in the browser (you cannot call/interact with the shims in the browser).
 
 #### Run tests

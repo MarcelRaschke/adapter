@@ -7,7 +7,7 @@
  */
 import * as utils from './utils';
 
-  // Browser shims.
+// Browser shims.
 import * as chromeShim from './chrome/chrome_shim';
 import * as firefoxShim from './firefox/firefox_shim';
 import * as safariShim from './safari/safari_shim';
@@ -52,6 +52,7 @@ export function adapterFactory({window} = {}, options = {
 
       // Must be called before shimPeerConnection.
       commonShim.shimAddIceCandidateNullOrEmpty(window, browserDetails);
+      commonShim.shimParameterlessSetLocalDescription(window, browserDetails);
 
       chromeShim.shimGetUserMedia(window, browserDetails);
       chromeShim.shimMediaStream(window, browserDetails);
@@ -59,11 +60,11 @@ export function adapterFactory({window} = {}, options = {
       chromeShim.shimOnTrack(window, browserDetails);
       chromeShim.shimAddTrackRemoveTrack(window, browserDetails);
       chromeShim.shimGetSendersWithDtmf(window, browserDetails);
-      chromeShim.shimGetStats(window, browserDetails);
       chromeShim.shimSenderReceiverGetStats(window, browserDetails);
       chromeShim.fixNegotiationNeeded(window, browserDetails);
 
       commonShim.shimRTCIceCandidate(window, browserDetails);
+      commonShim.shimRTCIceCandidateRelayProtocol(window, browserDetails);
       commonShim.shimConnectionState(window, browserDetails);
       commonShim.shimMaxMessageSize(window, browserDetails);
       commonShim.shimSendThrowTypeError(window, browserDetails);
@@ -81,6 +82,7 @@ export function adapterFactory({window} = {}, options = {
 
       // Must be called before shimPeerConnection.
       commonShim.shimAddIceCandidateNullOrEmpty(window, browserDetails);
+      commonShim.shimParameterlessSetLocalDescription(window, browserDetails);
 
       firefoxShim.shimGetUserMedia(window, browserDetails);
       firefoxShim.shimPeerConnection(window, browserDetails);
@@ -110,6 +112,7 @@ export function adapterFactory({window} = {}, options = {
 
       // Must be called before shimCallbackAPI.
       commonShim.shimAddIceCandidateNullOrEmpty(window, browserDetails);
+      commonShim.shimParameterlessSetLocalDescription(window, browserDetails);
 
       safariShim.shimRTCIceServerUrls(window, browserDetails);
       safariShim.shimCreateOfferLegacy(window, browserDetails);
@@ -121,6 +124,7 @@ export function adapterFactory({window} = {}, options = {
       safariShim.shimAudioContext(window, browserDetails);
 
       commonShim.shimRTCIceCandidate(window, browserDetails);
+      commonShim.shimRTCIceCandidateRelayProtocol(window, browserDetails);
       commonShim.shimMaxMessageSize(window, browserDetails);
       commonShim.shimSendThrowTypeError(window, browserDetails);
       commonShim.removeExtmapAllowMixed(window, browserDetails);
